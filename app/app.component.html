@@ -1,0 +1,16 @@
+<!-- app.html -->
+
+<div class="container main">
+
+  <div class="header">
+    <h5><a [routerLink]="['/']">ASWWU</a></h5>
+    <search-bar></search-bar>
+    <div class="float-right">
+      <a *ngIf="!req.isAuthenticated()" [routerLink]="['/login']">Login</a>
+      <a *ngIf="req.isAuthenticated()" [routerLink]="['/login']" (click)="req.logout()">Logout {{req.getUser().full_name}}</a>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+
+</div>
