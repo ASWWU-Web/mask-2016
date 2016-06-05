@@ -16,8 +16,9 @@ export class LoginComponent {
   constructor( private router: Router, private req: RequestService ) { }
 
   login() {
+    let self = this;
     this.req.login(this.username, this.password, data => {
-      window.history.back(); // NOTE: do something better here
+      self.router.navigate(['/']);
     });
   }
 }

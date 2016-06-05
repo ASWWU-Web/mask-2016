@@ -1,11 +1,19 @@
 <!-- login.component.html  -->
 
-<form (submit)="login()" class="simple-form">
-  <label>Username: </label>
-  <input type="text" [(ngModel)]="username" placeholder="firstname.lastname">
-  <br>
-  <label>Password: </label>
-  <input type="password" [(ngModel)]="password" placeholder="password">
-  <br>
-  <button class="button-primary" type="submit">Login</button>
-</form>
+<div class="container flex-content">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <h1>ASWWU Login</h1>
+      <hr>
+      <form (submit)="login()">
+        <label>Username: </label>
+        <input type="text" [(ngModel)]="username" placeholder="firstname.lastname" class="form-control">
+        <br>
+        <label>Password: </label>
+        <input type="password" [(ngModel)]="password" placeholder="password" class="form-control">
+        <br>
+        <button class="btn btn-success form-control" type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+</div>

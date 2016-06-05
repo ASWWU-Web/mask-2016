@@ -1,16 +1,24 @@
 <!-- app.html -->
 
-<div class="container main">
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+  <a class="navbar-brand" [routerLink]="['/']">ASWWU Quickstart</a>
+  <div class="nav navbar-nav pull-xs-right">
 
-  <div class="header">
-    <h5><a [routerLink]="['/']">ASWWU</a></h5>
-    <search-bar></search-bar>
-    <div class="float-right">
-      <a *ngIf="!req.isAuthenticated()" [routerLink]="['/login']">Login</a>
-      <a *ngIf="req.isAuthenticated()" [routerLink]="['/login']" (click)="req.logout()">Logout {{req.getUser().full_name}}</a>
+    <div class="nav-item" dropdown keyboardNav="true">
+      <a class="nav-link" dropdownToggle href="javascript:void()">Dropdown <span class="caret"></span></a>
+      <ul class="dropdown-menu" role="menu">
+        <li role="menuitem"><a class="dropdown-item" href="#">Some Link</a></li>
+        <li class="divider dropdown-divider"></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a></li>
+      </ul>
     </div>
+
+    <a class="nav-item nav-link" *ngIf="!req.isAuthenticated()" [routerLink]="['/login']">Login</a>
+    <a class="nav-item nav-link" *ngIf="req.isAuthenticated()" [routerLink]="['/login']" (click)="req.logout()">Logout {{req.getUser().full_name}}</a>
+
   </div>
+</nav>
 
+<div class="flex-wrapper">
   <router-outlet></router-outlet>
-
 </div>
