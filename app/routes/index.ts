@@ -3,3 +3,5 @@
 
 export * from './home/index';
 export * from './login/index';
+export * from './profile/index';
+export * from './search/index';

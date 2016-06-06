@@ -28,6 +28,10 @@ img { max-width: 100%; }
   padding-top: 5vh;
   padding-bottom: 15vh;
 }
+.flex-content.flex-true {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
 /*add the .flex-top class to align things to the top, with flexbox!*/
 .flex-content.flex-top {
   padding-top: 10vh;

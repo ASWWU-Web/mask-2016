@@ -1,0 +1,16 @@
+/*search-bar.styles.css*/
+
+search-bar {
+  position: relative;
+}
+.search-bar-results {
+  position: absolute;
+  top: 100%;
+  left: 10%;
+  width: 80%;
+  background-color: rgba(255,255,255,1);
+}
+.search-bar-results p {
+  padding: 0 0.5em;
+  margin: 0;
+}

@@ -7,21 +7,27 @@ import { DROPDOWN_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap';
 
 import { RequestService } from 'aswwu-requests/aswwu-requests';
 
-import { API_ENDPOINT } from './shared/index';
+import { API_ENDPOINT, SearchBarComponent } from './shared/index';
 import {
   HomeComponent,
-  LoginComponent
+  LoginComponent,
+  ProfileComponent,
+  SearchComponent
 } from './routes/index';
 
 @Component({
   selector: 'app',
   templateUrl: 'app/app.component.html',
-  directives: [ ROUTER_DIRECTIVES, DROPDOWN_DIRECTIVES ]
+  directives: [ ROUTER_DIRECTIVES, DROPDOWN_DIRECTIVES, SearchBarComponent ]
 })
 
 @Routes([
   { path: '/', component: HomeComponent },
-  { path: '/login', component: LoginComponent }
+  { path: '/login', component: LoginComponent },
+  { path: '/profile/:username/:year', component: ProfileComponent },
+  { path: '/profile/:username', component: ProfileComponent },
+  { path: '/search/:query/:year', component: SearchComponent },
+  { path: '/search/:query', component: SearchComponent }
 ])
 
 export class AppComponent implements OnInit {

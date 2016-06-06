@@ -1,0 +1,17 @@
+<!-- search.component.html -->
+
+<div class="container flex-content flex-top">
+  <div class="row">
+    <div class="column">
+      <h2>({{profile_results.length}}) Results for <i>{{query}}</i></h2>
+      <br>
+    </div>
+  </div>
+  <div class="search row">
+    <div *ngFor="let profile of profile_results" class="column column-20">
+      <a [routerLink]="['/profile', profile.username]">
+        <profile-view [profile]="profile" [size]="'search'"></profile-view>
+      </a>
+    </div>
+  </div>
+</div>

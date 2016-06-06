@@ -1,8 +1,8 @@
 {
-  "name": "aswwu-quickstart",
-  "description": "a quickstart Angular2 project for ASWWU",
+  "name": "mask",
+  "description": "The online Mask, by the ASWWU",
   "version": "1.0.0",
-  "repository": "https://github.com/aswwu-web/aswwu-quickstart",
+  "repository": "https://github.com/aswwu-web/mask",
   "scripts": {
     "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "lite": "lite-server",
