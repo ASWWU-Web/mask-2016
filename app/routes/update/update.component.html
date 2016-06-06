@@ -1,0 +1,29 @@
+<!-- update.component.html -->
+
+<form class="container flex-content flex-top" (submit)="saveProfile()">
+  <div class="row" *ngIf="profile">
+    <h2>Update Profile</h2>
+
+    <div *ngFor="let key of fieldsInOrder" class="col-xs-12 col-sm-6">
+      <div class="form-group">
+        <label class="text-warning text-capitalize">{{displayKey(key)}}</label>
+
+        <input *ngIf="!selectFields[key]" type="text" class="form-control" [(ngModel)]="profile[key]" [attr.id]="'input_' + key">
+
+        <div *ngIf="searchableFields[key] && profile[key].split(',').pop().trim().length > 0" class="field-results">
+          <p *ngFor="let field of searchableFields[key]; let i = index" class="text-muted" (click)="setSearchableField(key, field)">
+            <span *ngIf="field.toLowerCase().indexOf(profile[key].split(',').pop().trim().toLowerCase()) == 0" class="text-muted">{{field}}</span>
+          </p>
+        </div>
+
+        <select *ngIf="selectFields[key]" [(ngModel)]="profile[key]" class="form-control">
+          <option *ngFor="let field of selectFields[key]" [value]="field">{{field}}</option>
+        </select>
+
+      </div>
+    </div>
+
+  </div>
+  <br><br>
+  <button class="btn btn-lg btn-success form-control" type="submit">Save!</button>
+</form>

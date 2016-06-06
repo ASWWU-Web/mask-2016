@@ -3,9 +3,11 @@
 html, body {
   margin: 0;
   padding: 0;
+  color: white;
 }
-.capitalize { text-transform: capitalize; }
+hr { border-color: white; }
 img { max-width: 100%; }
+.shadow { text-shadow: 0 0.05em 0 #333, 0 0.1em 0 #777; }
 
 
 /*CSS flexbox support*/
@@ -37,4 +39,36 @@ img { max-width: 100%; }
   padding-top: 10vh;
   padding-bottom: 10vh;
   align-self: flex-start;
+}
+
+
+/*background stuffs*/
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #222;
+  z-index: -1;
+  overflow: hidden;
+
+  background-position: center;
+  background-size: cover;
+  /*background-image: url(https://aswwu.com/media/background.php);*/
+}
+#background {
+  /*min-width: 100%;
+  min-height: 100%;
+  max-width: 1000%;*/
+  -webkit-transition: -webkit-filter 300ms;
+  -moz-transition: -moz-filter 300ms;
+  -o-transition: -o-filter 300ms;
+  transition: -webkit-filter 300ms ,filter 300ms;
+}
+#background.hash {
+  -webkit-filter: saturate(0%) brightness(45%);
+  -moz-filter: saturate(0%) brightness(45%);
+  -o-filter: saturate(0%) brightness(45%);
+  filter: saturate(0%) brightness(45%);
 }

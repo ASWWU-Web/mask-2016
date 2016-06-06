@@ -1,7 +1,7 @@
 // login.component.ts
 
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { RequestService } from 'aswwu-requests/aswwu-requests';
 
@@ -13,12 +13,12 @@ export class LoginComponent {
   username: string;
   password: string;
 
-  constructor( private router: Router, private req: RequestService ) { }
+  constructor( private loc: Location, private req: RequestService ) { }
 
   login() {
     let self = this;
     this.req.login(this.username, this.password, data => {
-      self.router.navigate(['/']);
+      self.loc.back();
     });
   }
 }

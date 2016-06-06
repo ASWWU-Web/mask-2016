@@ -12,6 +12,7 @@
       <a class="nav-link" dropdownToggle href="javascript:void()">{{req.getUser().full_name}} <span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
         <li role="menuitem"><a class="dropdown-item" [routerLink]="['/profile', req.getUser().username]">View Profile</a></li>
+        <li role="menuitem"><a class="dropdown-item" [routerLink]="['/update']">Update Profile</a></li>
         <li role="menuitem"><a class="dropdown-item" [routerLink]="['/login']" (click)="req.logout()">Logout</a></li>
       </ul>
     </div>
@@ -21,3 +22,5 @@
 <div class="flex-wrapper">
   <router-outlet></router-outlet>
 </div>
+
+<div id="background" [class.hash]="backgroundHash" [ngStyle]="{'background-image': 'url(' + backgroundImageUrl + ')'}"></div>

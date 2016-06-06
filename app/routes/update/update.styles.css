@@ -1,0 +1,25 @@
+/*update.styles.css*/
+
+select { height: 2.3em; }
+.form-group {
+  position: relative;
+}
+
+.field-results {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  max-height: 6em;
+  overflow: scroll;
+  background-color: rgba(255,255,255,1);
+  border: solid 1px grey;
+  z-index: 2;
+}
+.field-results > *:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.field-results > * > * {
+  padding: 0 0.5em;
+  margin: 0;
+}

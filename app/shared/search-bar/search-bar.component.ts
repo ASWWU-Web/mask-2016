@@ -13,9 +13,9 @@ import { CURRENT_YEAR } from '../../shared/index';
   template: `
     <input class="form-control" [(ngModel)]="query" (focus)="search()" (keyup)="search()" (keyup.enter)="goSearch()" placeholder="Searcheth...">
     <div class='search-bar-results'>
-      <p *ngFor="let r of results; let i = index">
+      <h5 *ngFor="let r of results; let i = index">
         <a *ngIf="r.full_name && i < 10" [routerLink]="['/profile', r.username]">{{r.full_name}}</a>
-      </p>
+      </h5>
     </div>
   `,
   directives: [ ROUTER_DIRECTIVES ],

@@ -7,12 +7,16 @@
       <img src={{profile.photo}}>
     </div>
     <div *ngIf="profile.error" class="col-xs-12">
-      <h2 class="capitalize">{{profile.error}}</h2>
+      <h2 class="text-capitalize">{{profile.error}}</h2>
     </div>
     <div *ngIf="!profile.error" class="col-xs-12 col-md-6">
-      <h2 class='capitalize'>{{profile.full_name}} <span *ngIf="profile.year != CURRENT_YEAR">({{profile.year}})</span></h2>
+      <h1 class='text-capitalize'>{{profile.full_name}} <span *ngIf="profile.year != CURRENT_YEAR">({{profile.year}})</span></h1>
+      <hr>
       <p *ngFor="let key of fieldsInOrder">
-        <span *ngIf="profile[key]"><i>{{key}}</i> - <a href={{profile.linkByField(key)}}>{{profile[key]}}</a></span>
+        <span *ngIf="profile[key]">
+          <i class="text-muted text-capitalize">{{displayKey(key)}}</i> -
+          <a href={{profile.linkByField(key)}} class="text-success"><h5 style="display: inline;">{{profile[key]}}</h5></a>
+        </span>
       </p>
     </div>
   </div>
@@ -22,7 +26,7 @@
       <div class="img-box">
         <img src={{profile.photo}}>
       </div>
-      <h4 class="capitalize center">{{profile.error || profile.full_name}}</h4>
+      <h4 class="text-capitalize center">{{profile.error || profile.full_name}}</h4>
     </div>
   </div>
 
