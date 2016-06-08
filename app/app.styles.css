@@ -64,7 +64,7 @@ img { max-width: 100%; }
   -webkit-transition: -webkit-filter 300ms;
   -moz-transition: -moz-filter 300ms;
   -o-transition: -o-filter 300ms;
-  transition: -webkit-filter 300ms ,filter 300ms;
+  transition: -webkit-filter 300ms, filter 300ms;
 }
 #background.hash {
   -webkit-filter: saturate(0%) brightness(45%);

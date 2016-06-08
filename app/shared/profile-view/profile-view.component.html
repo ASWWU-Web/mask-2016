@@ -4,7 +4,7 @@
 
   <div *ngIf="size == 'full'" class="profile profile-full row">
     <div class="col-xs-12 col-md-6">
-      <img src={{profile.photo}}>
+      <img src={{profile.photoLink()}}>
     </div>
     <div *ngIf="profile.error" class="col-xs-12">
       <h2 class="text-capitalize">{{profile.error}}</h2>
@@ -24,7 +24,7 @@
   <div *ngIf="size == 'search'" class="profile profile-search">
     <div class="col-xs-6 col-md-4 col-lg-3">
       <div class="img-box">
-        <img src={{profile.photo}}>
+        <img src={{profile.photoLink()}}>
       </div>
       <h4 class="text-capitalize center">{{profile.error || profile.full_name}}</h4>
     </div>

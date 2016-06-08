@@ -23,3 +23,10 @@ select { height: 2.3em; }
   padding: 0 0.5em;
   margin: 0;
 }
+
+.possiblePhoto {
+  cursor: pointer;
+}
+.checked {
+  border: solid 2px lime;
+}

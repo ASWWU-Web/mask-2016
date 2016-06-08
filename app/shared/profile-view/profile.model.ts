@@ -1,8 +1,6 @@
 // profile.model.ts
 
 import { MEDIA_URI, DEFAULT_PHOTO } from '../../shared/index';
-const disabledFields = ["wwuid", "username", "views", "updated_at"];
-const privateFields = disabledFields.concat(["full_name", "gender", "privacy"]);
 
 export class ProfileModel {
   wwuid: string;
@@ -49,8 +47,6 @@ export class ProfileModel {
     if ((!this.full_name || this.full_name == '') && this.username) {
       this.full_name = this.username.replace(/\./g, ' ');
     }
-    this.photo = MEDIA_URI + "/img-sm/" + (this.photo || DEFAULT_PHOTO).replace(MEDIA_URI, "");
-    this.photo = this.photo.replace("//","/");
   }
 
   linkByField(key: string): string {
@@ -62,5 +58,16 @@ export class ProfileModel {
     if (key == "website") link = (value.indexOf('http') > -1 ? value : 'http://'+value);
 
     return link;
+  }
+
+  getPhotoLink(uri: string): string {
+    if (!uri || uri == '') uri = this.photo || DEFAULT_PHOTO;
+    let photo = MEDIA_URI + "/img-sm/" + uri.replace(MEDIA_URI, "");
+    photo = photo.replace("//","/");
+    return photo;
+  }
+
+  photoLink(): string {
+    return this.getPhotoLink('');
   }
 }
