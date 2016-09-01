@@ -1,8 +1,23 @@
 <!-- home.component.html -->
 
 <div class="container flex-content">
-  <div class="col-xs-12 col-md-8 offset-md-2">
-    <img src='https://aswwu.com/media/images/masklogo.png' class="text-xs-center m-x-auto d-block" />
-    <search-bar></search-bar>
+  <div style="height:25vh; width:100%;">
+
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-8 offset-md-2">
+      <img src='https://aswwu.com/media/images/masklogo.png' class="text-xs-center m-x-auto d-block" />
+      <search-bar></search-bar>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 text-xs-center" style="margin-top:50px;">
+      <h2 class="shadow">Trending People</h2>
+    </div>
+  </div>
+  <div class="search row text-xs-left">
+      <a *ngFor="let profile of top_profiles" [routerLink]="['/profile', profile.username]">
+        <profile-view [profile]="profile" [size]="'search'"></profile-view>
+      </a>
   </div>
 </div>

@@ -23,7 +23,6 @@ export class SearchComponent implements OnActivate {
   constructor( curr: RouteSegment, private req: RequestService ) {
     this.query = curr.getParam('query');
     this.year = curr.getParam('year') || CURRENT_YEAR;
-
   }
 
   routerOnActivate() {
