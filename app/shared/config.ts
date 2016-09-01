@@ -6,4 +6,4 @@ export var API_ENDPOINT = 'https://aswwu.com/server';
 
 export var MEDIA_URI = 'https://aswwu.com/media';
 export var DEFAULT_PHOTO = 'images/mask_unknown.png';
-export var CURRENT_YEAR = '1516';
+export var CURRENT_YEAR = '1617';
