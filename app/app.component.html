@@ -2,11 +2,12 @@
 
 <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
   <a class="navbar-brand" [routerLink]="['/']">ASWWU Mask</a>
-  <div class="nav-item hidden-sm-down col-sm-4">
-    <search-bar></search-bar>
-  </div>
+
 
   <div class="nav navbar-nav pull-xs-right">
+    <div class="nav-item hidden-xs-down">
+      <search-bar></search-bar>
+    </div>
     <a class="nav-item nav-link" *ngIf="!req.isAuthenticated()" [routerLink]="['/login']">Login</a>
     <div class="nav-item" dropdown keyboardNav="true" *ngIf="req.isAuthenticated()">
       <a class="nav-link" dropdownToggle href="javascript:void()">{{req.getUser().full_name}} <span class="caret"></span></a>

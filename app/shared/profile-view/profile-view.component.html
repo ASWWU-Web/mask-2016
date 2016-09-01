@@ -21,13 +21,11 @@
     </div>
   </div>
 
-  <div *ngIf="size == 'search'" class="profile profile-search">
-    <div class="col-xs-6 col-md-4 col-lg-3">
-      <div class="img-box">
-        <img src={{profile.photoLink()}}>
-      </div>
-      <h4 class="text-capitalize center">{{profile.error || profile.full_name}}</h4>
+  <div *ngIf="size == 'search'" class="profile profile-search col-xs-6 col-md-4 col-lg-3">
+    <div class="img-box">
+      <img src={{profile.photoLink()}}>
     </div>
+    <h4 class="text-capitalize center">{{profile.error || profile.full_name}}</h4>
   </div>
 
 </div>
