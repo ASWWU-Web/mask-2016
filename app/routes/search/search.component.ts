@@ -44,4 +44,7 @@ export class SearchComponent implements OnActivate {
       }
     }
   }
+  decodeURI(query: string){
+    return decodeURIComponent(query);
+  }
 }

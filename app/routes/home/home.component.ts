@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 
 import { RouteSegment, OnActivate, ROUTER_DIRECTIVES } from '@angular/router';
 
-import { SearchBarComponent, CURRENT_YEAR, ProfileModel, ProfileViewComponent  } from '../../shared/index';
+import { SearchBarComponent, ProfileModel, ProfileViewComponent  } from '../../shared/index';
 
 import { RequestService } from 'aswwu-requests/aswwu-requests';
 
@@ -20,13 +20,11 @@ export class HomeComponent implements OnActivate {
   year: string;
 
   constructor(private req: RequestService ) {
-    this.year = CURRENT_YEAR;
   }
 
   routerOnActivate() {
     this.req.get("/search/all", (data) => {
       this.all_profiles = (data.results || []).map((r) => {
-        r.year = this.year;
         return new ProfileModel(r);
       }).sort((aProfile,bProfile)=> {
         var a = aProfile.views || 0;

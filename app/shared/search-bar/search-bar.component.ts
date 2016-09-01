@@ -39,6 +39,6 @@ export class SearchBarComponent {
   }
 
   goSearch(): void {
-    this.router.navigate(['/search', this.query]);
+    this.router.navigate(['/search', encodeURIComponent(this.query)]);
   }
 }
