@@ -15,9 +15,5 @@
       <h2 class="shadow">Trending People</h2>
     </div>
   </div>
-  <div class="search row text-xs-left">
-      <a *ngFor="let profile of top_profiles" [routerLink]="['/profile', profile.username]">
-        <profile-view [profile]="profile" [size]="'search'"></profile-view>
-      </a>
-  </div>
+  <search [query]="' '" [year]="year" [sortBy]="'views'" [showSummary]="'false'"></search>
 </div>

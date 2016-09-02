@@ -1,0 +1,19 @@
+<!-- search.component.html -->
+
+<div *ngIf='!showSummary' class="row">
+  <div class="column">
+    <h2>({{profile_results.length}}) Results for <i>{{decodeURI(query)}}</i></h2>
+    <br>
+  </div>
+</div>
+<div class="search row text-xs-left">
+    <a *ngFor="let profile of partial_results" [routerLink]="['/profile', profile.username]">
+      <profile-view [profile]="profile" [size]="'search'"></profile-view>
+    </a>
+</div>
+<br />
+<div *ngIf="!(profileIndex + 1 >= profile_results.length)" class="row">
+  <div class="col col-md-6 offset-md-3 text-xs-center">
+    <button (click)='showMore()' class="btn btn-primary" type='button'>Show More</button>
+  </div>
+</div>
