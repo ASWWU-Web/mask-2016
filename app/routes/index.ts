@@ -6,3 +6,4 @@ export * from './login/index';
 export * from './profile/index';
 export * from './search/index';
 export * from './update/index';
+export * from './supersearch/index';

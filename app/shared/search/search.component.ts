@@ -43,6 +43,25 @@ export class SearchResultsComponent {
       this.showMore();
     }, null);
   }
+  ngOnChanges() {
+    this.profileIndex = 0;
+    this.profile_results = [];
+    this.partial_results = [];
+    this.req.get("/search/"+this.year+"/"+this.query, (data) => {
+      this.profile_results = (data.results || []).map((r) => {
+        r.year = this.year;
+        return new ProfileModel(r);
+      });
+      if(this.sortBy){
+        this.profile_results.sort((aProfile,bProfile)=> {
+          var a = aProfile[this.sortBy] || 0;
+          var b = bProfile[this.sortBy] || 0;
+          return b - a;
+        });
+      }
+      this.showMore();
+    }, null);
+  }
 
   showMore(){
     for (var i = 0; i <= 11; i++) {
@@ -53,6 +72,6 @@ export class SearchResultsComponent {
     }
   }
   decodeURI(query: string){
-    return decodeURIComponent(query);
+    return decodeURIComponent(query).replace('=',': ').replace(';',',').replace('_'," ");
   }
 }

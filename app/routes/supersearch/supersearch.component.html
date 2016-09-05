@@ -1,0 +1,53 @@
+<div class="container flex-content flex-true">
+  <div class='row'>
+    <div class="col-xs-12 text-xs-center">
+      <h1>Soup or Search</h1>
+    </div>
+  </div>
+  <form (submit)='search()'>
+    <div class="form-group row">
+      <label for="inputYear" class="col-sm-4 col-form-label">Year</label>
+      <div class="col-sm-8">
+        <select [(ngModel)]="year" class="form-control" id="inputYear">
+          <option [value]='CURRENT_YEAR'>
+            {{CURRENT_YEAR + ' (Current)'}}
+          </option>
+          <option *ngFor="let old_year of ARCHIVE_YEARS" [value]="old_year">
+            {{old_year}}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div *ngFor='let field of fields; let i = index' class="row">
+      <div class="form-group">
+        <div class='col-xs-4'>
+          <select [(ngModel)]="field.selectedOption" class='form-control'>
+              <option *ngFor='let key of field.options' [value]='key'>{{field.displayKey(key)}}</option>
+          </select>
+        </div>
+        <div class="col-xs-8">
+            <div class="input-group">
+              <input [(ngModel)]="field.value" class="form-control">
+              <span class="input-group-btn">
+                <button (click)="removeField(i)" class="btn btn-secondary" type="button"><font color="red">&#9472;</font></button>
+              </span>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <div class="row">
+      <div class="col col-xs-6 pull-xs-right">
+        <button type="submit" class="btn btn-success form-control">Search</button>
+      </div>
+      <div class="col col-xs-6">
+        <button (click)="addField()" class="btn btn-warning form-control">AddField</button>
+      </div>
+    </div>
+  </form>
+
+  <hr />
+  <search [query]='query' [year]='year'></search>
+</div>
