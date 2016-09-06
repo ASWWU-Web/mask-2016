@@ -9,6 +9,7 @@
       <search-bar></search-bar>
     </div>
     <a class="nav-item nav-link" [routerLink]="['/supersearch']">Super Search</a>
+    <a class="nav-item nav-link" [routerLink]="['/search','birthday=' + date.getMonth() + '-' + date.getDate()]">Birthdays</a>
     <a class="nav-item nav-link" *ngIf="!req.isAuthenticated()" [routerLink]="['/login']">Login</a>
     <div class="nav-item" dropdown keyboardNav="true" *ngIf="req.isAuthenticated()">
       <a class="nav-link" dropdownToggle href="javascript:void()">{{req.getUser().full_name}} <span class="caret"></span></a>

@@ -72,6 +72,6 @@ export class SearchResultsComponent {
     }
   }
   decodeURI(query: string){
-    return decodeURIComponent(query).replace('=',': ').replace(';',',').replace('_'," ");
+    return decodeURIComponent(query).replace(/\=/g,': ').replace(/\;/g,', ').replace(/\_/g," ");
   }
 }

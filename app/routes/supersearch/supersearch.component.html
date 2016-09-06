@@ -6,7 +6,11 @@
   </div>
   <form (submit)='search()'>
     <div class="form-group row">
-      <label for="inputYear" class="col-sm-4 col-form-label">Year</label>
+      <div class='col-xs-4'>
+        <select class='form-control'>
+            <option>Year</option>
+        </select>
+      </div>
       <div class="col-sm-8">
         <select [(ngModel)]="year" class="form-control" id="inputYear">
           <option [value]='CURRENT_YEAR'>

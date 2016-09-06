@@ -41,6 +41,7 @@ export class AppComponent implements OnInit {
   backgroundHash: boolean = false;
   backgroundImageUrl: string = "https://aswwu.com/media/background.php?date="+(new Date()).getTime();
   hasVerified: boolean = false;
+  date: Date = new Date();
 
   constructor(
     private loc: Location,
