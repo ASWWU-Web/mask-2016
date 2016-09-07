@@ -1,6 +1,7 @@
 // profile-view.component.ts
 
 import { Component } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import {
   CURRENT_YEAR,
@@ -12,7 +13,8 @@ import {
   selector: 'profile-view',
   inputs: [ 'profile', 'size' ],
   templateUrl: 'app/shared/profile-view/profile-view.component.html',
-  styleUrls: [ 'app/shared/profile-view/profile-view.styles.css' ]
+  styleUrls: [ 'app/shared/profile-view/profile-view.styles.css' ],
+  directives: [ ROUTER_DIRECTIVES ]
 })
 
 export class ProfileViewComponent {
@@ -23,4 +25,7 @@ export class ProfileViewComponent {
   fieldsInOrder: string[] = FieldsInOrder;
 
   displayKey(key: string): string { return key.replace(/_/g, ' '); }
+  encode(stuff: string){
+    return encodeURIComponent(stuff);
+  }
 }

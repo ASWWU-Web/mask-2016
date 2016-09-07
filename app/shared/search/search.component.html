@@ -7,7 +7,7 @@
   </div>
 </div>
 <div class="search row text-xs-left">
-    <a *ngFor="let profile of partial_results" [routerLink]="['/profile', profile.username]">
+    <a *ngFor="let profile of partial_results" [routerLink]="['/profile', profile.username, year]">
       <profile-view [profile]="profile" [size]="'search'"></profile-view>
     </a>
 </div>

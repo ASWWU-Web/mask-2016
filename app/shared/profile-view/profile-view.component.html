@@ -15,7 +15,16 @@
       <p *ngFor="let key of fieldsInOrder">
         <span *ngIf="profile[key]">
           <i class="text-muted text-capitalize">{{displayKey(key)}}</i> -
-          <a href={{profile.linkByField(key)}} class="text-white"><h5 style="display: inline;font-weight:normal;">{{profile[key]}}</h5></a>
+          <!-- If the profile is email, phone or website do this.  -->
+          <a *ngIf="key == 'email' || key == 'phone' || key == 'website'" href="{{profile.linkByField(key)}}" target="_blank" class="text-white">
+            <h5 style="display: inline;font-weight:normal;">{{profile[key]}}</h5>
+          </a>
+          <!-- else -->
+          <span *ngIf="!(key == 'email' || key == 'phone' || key == 'website')">
+            <a *ngFor="let value of profile[key].split(',')" [routerLink]="['/search', encode(key + '=' + value) ]" class="text-white">
+              <h5 style="display: inline;font-weight:normal;">{{value}},</h5>
+            </a>
+          </span>
         </span>
       </p>
     </div>

@@ -16,7 +16,8 @@ import {
   ProfileComponent,
   SearchComponent,
   UpdateComponent,
-  SuperSearchComponent
+  SuperSearchComponent,
+  ErrorComponent
 } from './routes/index';
 
 @Component({
@@ -34,7 +35,8 @@ import {
   { path: '/search/:query/:year', component: SearchComponent },
   { path: '/search/:query', component: SearchComponent },
   { path: '/update', component: UpdateComponent },
-  { path: '/supersearch', component: SuperSearchComponent }
+  { path: '/supersearch', component: SuperSearchComponent },
+  { path: '*', component: ErrorComponent}
 ])
 
 export class AppComponent implements OnInit {

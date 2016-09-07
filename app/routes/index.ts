@@ -7,3 +7,4 @@ export * from './profile/index';
 export * from './search/index';
 export * from './update/index';
 export * from './supersearch/index';
+export * from './error/index';
