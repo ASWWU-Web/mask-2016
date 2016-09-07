@@ -15,10 +15,10 @@ export const PrivateFields: string[] = DisabledFields.concat(["full_name", "gend
 export const FieldsInOrder: string[] = FieldSections.reduce((a, b) => { return a.concat(b); }).filter((a) => { return PrivateFields.indexOf(a) < 0; });
 
 export const SelectFields: Object = {
-  relationship_status: ["","attached","available","call me!","content","dating","desperate","engaged","free for tea","hermit","I'll pay","I'm a cheap date","in a relationship","in engineering...","in pursuit","just ask me","lonely","looking","married","married to my books","not available","pick me! pick me!","senior, single, and ready to mingle","single","single but not set on it","social life? what's that?","socially inept","taken","undecided","very available","waiting","waiting for my ring","will date for coffee","yoda hasn't told me yet"],
+  relationship_status: ["","Attached","Available","Call me!","Content","Dating","Desperate","Engaged","Free for tea","Hermit","I'll pay","I'm a cheap date","In a relationship","In engineering...","In pursuit","Just ask me","Lonely","Looking","Married","Married to my books","Not available","Pick me! Pick me!","Senior, single, and ready to mingle","Single","Single but not set on it","Social life? what's that?","Socially inept","Taken","Undecided","Very available","Waiting","Waiting for my ring","Will date for coffee","Yoda hasn't told me yet"],
   personality: ["","ENFJ - Teacher","ENFP - Champion","ENTJ - Field Marshall","ENTP - Inventor","ESFJ - Provider","ESFP - Performer","ESTJ - Supervisor","ESTP - Promoter","INFJ - Counselor","INFP - Healer","INTJ - Mastermind","INTP - Architect","ISFJ - Protector","ISFP - Composer","ISTJ - Inspector","ISTP - Crafter","No personality"],
   gender: ["","male","female"],
-  class_standing: ["freshman","sophomore","junior","senior","super senior","undecided"],
+  class_standing: ["Freshman","Sophomore","Junior","Senior","Super Senior","Undecided"],
   privacy: ["Public", "Must Be Logged In", "Hidden"]
 };
 

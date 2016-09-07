@@ -23,7 +23,7 @@
 
           <input *ngIf="!selectFields[key]" type="text" class="form-control" [(ngModel)]="profile[key]" [attr.id]="'input_' + key">
 
-          <div *ngIf="searchableFields[key] && profile[key].split(',').pop().trim().length > 0" class="field-results">
+          <div *ngIf="profile[key] && searchableFields[key] && profile[key].split(',').pop().trim().length > 0" class="field-results">
             <p *ngFor="let field of searchableFields[key]; let i = index" class="text-muted" (click)="setSearchableField(key, field)">
               <span *ngIf="field.toLowerCase().indexOf(profile[key].split(',').pop().trim().toLowerCase()) == 0" class="text-muted">{{field}}</span>
             </p>

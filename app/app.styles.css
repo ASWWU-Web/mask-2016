@@ -71,8 +71,8 @@ img { max-width: 100%; }
   transition: -webkit-filter 300ms, filter 300ms;
 }
 #background.hash {
-  -webkit-filter: saturate(0%) brightness(45%);
-  -moz-filter: saturate(0%) brightness(45%);
-  -o-filter: saturate(0%) brightness(45%);
-  filter: saturate(0%) brightness(45%);
+  -webkit-filter: saturate(0%) brightness(10%);
+  -moz-filter: saturate(0%) brightness(10%);
+  -o-filter: saturate(0%) brightness(10%);
+  filter: saturate(0%) brightness(10%);
 }

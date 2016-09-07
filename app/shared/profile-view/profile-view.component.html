@@ -15,7 +15,7 @@
       <p *ngFor="let key of fieldsInOrder">
         <span *ngIf="profile[key]">
           <i class="text-muted text-capitalize">{{displayKey(key)}}</i> -
-          <a href={{profile.linkByField(key)}} class="text-success"><h5 style="display: inline;">{{profile[key]}}</h5></a>
+          <a href={{profile.linkByField(key)}} class="text-white"><h5 style="display: inline;font-weight:normal;">{{profile[key]}}</h5></a>
         </span>
       </p>
     </div>
