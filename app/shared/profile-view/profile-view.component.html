@@ -21,8 +21,8 @@
           </a>
           <!-- else -->
           <span *ngIf="!(key == 'email' || key == 'phone' || key == 'website')">
-            <a *ngFor="let value of profile[key].split(',')" [routerLink]="['/search', encode(key + '=' + value) ]" class="text-white">
-              <h5 style="display: inline;font-weight:normal;">{{value}},</h5>
+            <a *ngFor="let value of profile[key].split(',');let last = last" [routerLink]="['/search', encode(key + '=' + value) ]" class="text-white">
+              <h5 style="display: inline;font-weight:normal;">{{value}}<span *ngIf="!last">,</span></h5>
             </a>
           </span>
         </span>
